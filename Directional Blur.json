@@ -1,0 +1,592 @@
+{
+  "id": "2d9fa746-33d8-410d-96e2-074378a14f81",
+  "revision": 0,
+  "last_node_id": 20,
+  "last_link_id": 29,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+      "pos": [
+        2405.7901252464253,
+        2267.4752537031827
+      ],
+      "size": [
+        487.515625,
+        700
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "title": "Directional Blur",
+      "properties": {
+        "proxyWidgets": [
+          [
+            "2",
+            "image"
+          ],
+          [
+            "18",
+            "value"
+          ],
+          [
+            "17",
+            "value"
+          ],
+          [
+            "12",
+            "value"
+          ],
+          [
+            "19",
+            "value"
+          ],
+          [
+            "15",
+            "$$canvas-image-preview"
+          ],
+          [
+            "20",
+            "$$canvas-image-preview"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 14,
+      "type": "SaveImage",
+      "pos": [
+        2988.5310200225276,
+        2267.285188879158
+      ],
+      "size": [
+        484.734375,
+        530.734375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 20,
+          "lastLinkId": 29,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Directional Blur",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            1706.844967821621,
+            2683.904730290708,
+            128,
+            48
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3361.6911613033376,
+            2668.8087680640424,
+            128,
+            68
+          ]
+        },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "70003fca-0f35-46b5-a08b-fb28b3ddd14a",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              18
+            ],
+            "localized_name": "IMAGE0",
+            "pos": [
+              3385.6911613033376,
+              2692.8087680640424
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 2,
+            "type": "LoadImage",
+            "pos": [
+              1894.844967821621,
+              2221.3889958893706
+            ],
+            "size": [
+              282.796875,
+              340
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  19
+                ]
+              },
+              {
+                "localized_name": "MASK",
+                "name": "MASK",
+                "type": "MASK",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "LoadImage"
+            },
+            "widgets_values": [
+              "ComfyUI_00527_.png",
+              "image"
+            ]
+          },
+          {
+            "id": 12,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1904.4176436479725,
+              2748.786106114185
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "gain",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  27
+                ]
+              }
+            ],
+            "title": "Gain",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "id": 15,
+            "type": "GLSLShader",
+            "pos": [
+              2302.960384060616,
+              2223.0751046911246
+            ],
+            "size": [
+              893.5,
+              861.5
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 19
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 27
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 28
+              },
+              {
+                "label": "u_float2",
+                "localized_name": "floats.u_float2",
+                "name": "floats.u_float2",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 29
+              },
+              {
+                "label": "u_float3",
+                "localized_name": "floats.u_float3",
+                "name": "floats.u_float3",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": 25
+              },
+              {
+                "label": "u_int1",
+                "localized_name": "ints.u_int1",
+                "name": "ints.u_int1",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "label": "u_bool0",
+                "localized_name": "bools.u_bool0",
+                "name": "bools.u_bool0",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": null
+              },
+              {
+                "label": "u_curve0",
+                "localized_name": "curves.u_curve0",
+                "name": "curves.u_curve0",
+                "shape": 7,
+                "type": "CURVE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  18
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "/* GLSL Shader For ComfyUI Built by Axiomgraph */\n#version 300 es\nprecision highp float;\n\nlayout(location = 0) out vec4 fragColor;\n\nuniform sampler2D u_image0;\nin vec2 v_texCoord;\n\nuniform int u_int0;     // Quality (1-50)\nuniform float u_float0; // Gain (normally 1.0)\nuniform float u_float1; // Angle (degrees)\nuniform float u_float2; // Blur Radius (pixels)\n\nvoid main()\n{\n    vec2 uv = v_texCoord;\n\n    // Direction\n    float angle = radians(u_float1);\n    vec2 dir = vec2(cos(angle), sin(angle));\n\n    // Convert pixel radius to UV units\n    vec2 texelSize = 1.0 / vec2(textureSize(u_image0, 0));\n    vec2 blurDir = dir * texelSize * u_float2;\n\n    // Noise for banding reduction\n    float noise = fract(\n        sin(dot(uv, vec2(12.9898, 78.233))) *\n        43758.5453\n    );\n\n    vec3 color = vec3(0.0);\n    float ws = 0.0;\n\n    int quality = clamp(u_int0, 1, 50);\n\n    for (int i = -50; i <= 50; i++)\n    {\n        if (abs(i) > quality)\n            continue;\n\n        float p = (float(i) + noise - 0.5) / float(quality);\n\n        // Triangular weight\n        float w = 1.0 - abs(p);\n\n        vec2 offset = blurDir * p;\n\n        color += texture(u_image0, uv + offset).rgb * w;\n        ws += w;\n    }\n\n    color /= max(ws, 0.00001);\n\n    // Optional gain\n    color *= max(u_float0, 0.0);\n\n    fragColor = vec4(color, 1.0);\n}",
+              "from_input"
+            ]
+          },
+          {
+            "id": 17,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1907.6070028293898,
+              3016.6297442170667
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "blur amount",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  29
+                ]
+              }
+            ],
+            "title": "Blur Amount",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              46
+            ]
+          },
+          {
+            "id": 18,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1907.2800794112106,
+              2882.881793462235
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "angle",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  28
+                ]
+              }
+            ],
+            "title": "Angle",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              45
+            ]
+          },
+          {
+            "id": 19,
+            "type": "PrimitiveInt",
+            "pos": [
+              1904.3819817845922,
+              2615.0960182124645
+            ],
+            "size": [
+              270,
+              82
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "quality",
+                "localized_name": "value",
+                "name": "value",
+                "type": "INT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  25
+                ]
+              }
+            ],
+            "title": "Quality",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveInt"
+            },
+            "widgets_values": [
+              20,
+              "fixed"
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 18,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 19,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 25,
+            "origin_id": 19,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 6,
+            "type": "INT"
+          },
+          {
+            "id": 27,
+            "origin_id": 12,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 28,
+            "origin_id": 18,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": 29,
+            "origin_id": 17,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 4,
+            "type": "FLOAT"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9827288426690408,
+      "offset": [
+        -2081.3993002135153,
+        -2121.567963916725
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
