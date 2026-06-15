@@ -1,0 +1,412 @@
+{
+  "id": "f5be41f9-0df8-4019-8409-3ed80819696e",
+  "revision": 0,
+  "last_node_id": 43,
+  "last_link_id": 43,
+  "nodes": [
+    {
+      "id": 14,
+      "type": "SaveImage",
+      "pos": [
+        2857.064995076556,
+        2297.142680496202
+      ],
+      "size": [
+        484.734375,
+        530.734375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 43
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 41,
+      "type": "LoadImage",
+      "pos": [
+        2039.6630100909597,
+        2295.8428818702323
+      ],
+      "size": [
+        282.796875,
+        340
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00523_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "c6e3bab1-edf6-4f05-8f9f-161345c48f60",
+      "pos": [
+        2421.4269304712398,
+        2297.2075570821967
+      ],
+      "size": [
+        367.140625,
+        340
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image0",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            43
+          ]
+        }
+      ],
+      "title": "Pixelate",
+      "properties": {
+        "proxyWidgets": [
+          [
+            "40",
+            "$$canvas-image-preview"
+          ],
+          [
+            "42",
+            "value"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      42,
+      41,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      43,
+      43,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "c6e3bab1-edf6-4f05-8f9f-161345c48f60",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 43,
+          "lastLinkId": 43,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Pixelate",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            1862,
+            2491,
+            128,
+            68
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3049.421875,
+            2491,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "428076bd-0bd9-480d-aea3-b6cec562f716",
+            "name": "images.image0",
+            "type": "IMAGE",
+            "linkIds": [
+              40
+            ],
+            "localized_name": "images.image0",
+            "label": "image0",
+            "pos": [
+              1966,
+              2515
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "2d55f35f-b2ab-42ed-a258-7d76da57d54d",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              39
+            ],
+            "localized_name": "IMAGE0",
+            "pos": [
+              3073.421875,
+              2515
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 40,
+            "type": "GLSLShader",
+            "pos": [
+              2470,
+              2300
+            ],
+            "size": [
+              519.421875,
+              316
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 40
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 41
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "label": "u_bool0",
+                "localized_name": "bools.u_bool0",
+                "name": "bools.u_bool0",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": null
+              },
+              {
+                "label": "u_curve0",
+                "localized_name": "curves.u_curve0",
+                "name": "curves.u_curve0",
+                "shape": 7,
+                "type": "CURVE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  39
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "/* Pixelate Filter Adapted from natron plugins\n   Rebuilt for ComfyUI by AxiomGraph */\n\n#version 300 es\nprecision highp float;\n\nlayout(location = 0) out vec4 fragColor;\nuniform sampler2D u_image0;\nin vec2 v_texCoord;\n\n// Uniforms\nuniform float u_float0; // Block Size (in pixels)\n\nvoid main(void)\n{\n    vec2 uv = v_texCoord;\n    \n    // Safety check: block size cannot be less than 1 pixel, otherwise mod() crashes\n    float blockSize = max(u_float0, 1.0);\n    \n    // Get true image resolution to automatically handle aspect ratio\n    vec2 res = vec2(textureSize(u_image0, 0));\n    \n    // Convert the block size from physical pixels to 0.0-1.0 UV space\n    vec2 size = blockSize / res;\n    \n    // Snap UV coordinates to the grid. \n    // Adding (size * 0.5) ensures we sample the exact center of the block for the cleanest color.\n    vec2 pix_uv = uv - mod(uv, size) + (size * 0.5);\n    \n    fragColor = texture(u_image0, pix_uv);\n}",
+              "from_input"
+            ]
+          },
+          {
+            "id": 42,
+            "type": "PrimitiveFloat",
+            "pos": [
+              2050,
+              2700
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "block size",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  41
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              14
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 41,
+            "origin_id": 42,
+            "origin_slot": 0,
+            "target_id": 40,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 40,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 40,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 39,
+            "origin_id": 40,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8933898569718552,
+      "offset": [
+        -1710.4097406665717,
+        -2063.019253312794
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
