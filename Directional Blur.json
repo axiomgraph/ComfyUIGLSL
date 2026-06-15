@@ -1,8 +1,8 @@
 {
   "id": "2d9fa746-33d8-410d-96e2-074378a14f81",
   "revision": 0,
-  "last_node_id": 20,
-  "last_link_id": 29,
+  "last_node_id": 21,
+  "last_link_id": 31,
   "nodes": [
     {
       "id": 13,
@@ -16,9 +16,16 @@
         700
       ],
       "flags": {},
-      "order": 0,
+      "order": 1,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "label": "image",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
       "outputs": [
         {
           "name": "IMAGE0",
@@ -28,13 +35,8 @@
           ]
         }
       ],
-      "title": "Directional Blur",
       "properties": {
         "proxyWidgets": [
-          [
-            "2",
-            "image"
-          ],
           [
             "18",
             "value"
@@ -53,10 +55,6 @@
           ],
           [
             "15",
-            "$$canvas-image-preview"
-          ],
-          [
-            "20",
             "$$canvas-image-preview"
           ]
         ],
@@ -77,7 +75,7 @@
         530.734375
       ],
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
@@ -95,6 +93,45 @@
       "widgets_values": [
         "ComfyUI"
       ]
+    },
+    {
+      "id": 21,
+      "type": "LoadImage",
+      "pos": [
+        2000.0367930151308,
+        2267.9229727267493
+      ],
+      "size": [
+        302.125,
+        457.015625
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00523_.png",
+        "image"
+      ]
     }
   ],
   "links": [
@@ -103,6 +140,14 @@
       13,
       0,
       14,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      21,
+      0,
+      13,
       0,
       "IMAGE"
     ]
@@ -115,8 +160,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 0,
-          "lastNodeId": 20,
-          "lastLinkId": 29,
+          "lastNodeId": 21,
+          "lastLinkId": 31,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -128,7 +173,7 @@
             1706.844967821621,
             2683.904730290708,
             128,
-            48
+            68
           ]
         },
         "outputNode": {
@@ -140,7 +185,21 @@
             68
           ]
         },
-        "inputs": [],
+        "inputs": [
+          {
+            "id": "c09d0e50-2890-4532-ad30-2fd8b92ea550",
+            "name": "images.image0",
+            "type": "IMAGE",
+            "linkIds": [
+              30
+            ],
+            "label": "image",
+            "pos": [
+              1810.844967821621,
+              2707.904730290708
+            ]
+          }
+        ],
         "outputs": [
           {
             "id": "70003fca-0f35-46b5-a08b-fb28b3ddd14a",
@@ -159,47 +218,6 @@
         "widgets": [],
         "nodes": [
           {
-            "id": 2,
-            "type": "LoadImage",
-            "pos": [
-              1894.844967821621,
-              2221.3889958893706
-            ],
-            "size": [
-              282.796875,
-              340
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "IMAGE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  19
-                ]
-              },
-              {
-                "localized_name": "MASK",
-                "name": "MASK",
-                "type": "MASK",
-                "links": null
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.24.0",
-              "Node name for S&R": "LoadImage"
-            },
-            "widgets_values": [
-              "ComfyUI_00527_.png",
-              "image"
-            ]
-          },
-          {
             "id": 12,
             "type": "PrimitiveFloat",
             "pos": [
@@ -211,7 +229,7 @@
               80
             ],
             "flags": {},
-            "order": 1,
+            "order": 0,
             "mode": 0,
             "inputs": [
               {
@@ -254,10 +272,10 @@
             ],
             "size": [
               893.5,
-              861.5
+              388
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -265,7 +283,7 @@
                 "localized_name": "images.image0",
                 "name": "images.image0",
                 "type": "IMAGE",
-                "link": 19
+                "link": 30
               },
               {
                 "label": "image1",
@@ -390,7 +408,7 @@
               80
             ],
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -421,7 +439,7 @@
               "Node name for S&R": "PrimitiveFloat"
             },
             "widgets_values": [
-              46
+              52
             ]
           },
           {
@@ -436,7 +454,7 @@
               80
             ],
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -482,7 +500,7 @@
               82
             ],
             "flags": {},
-            "order": 4,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -529,14 +547,6 @@
             "type": "IMAGE"
           },
           {
-            "id": 19,
-            "origin_id": 2,
-            "origin_slot": 0,
-            "target_id": 15,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 25,
             "origin_id": 19,
             "origin_slot": 0,
@@ -567,6 +577,14 @@
             "target_id": 15,
             "target_slot": 4,
             "type": "FLOAT"
+          },
+          {
+            "id": 30,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {}
@@ -578,8 +596,8 @@
     "ds": {
       "scale": 0.9827288426690408,
       "offset": [
-        -2081.3993002135153,
-        -2121.567963916725
+        -1742.5469275736841,
+        -2106.304343527544
       ]
     },
     "frontendVersion": "1.45.15",
