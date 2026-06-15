@@ -1,0 +1,656 @@
+{
+  "id": "f5be41f9-0df8-4019-8409-3ed80819696e",
+  "revision": 0,
+  "last_node_id": 28,
+  "last_link_id": 37,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+      "pos": [
+        2405.7901252464253,
+        2298.5575352229707
+      ],
+      "size": [
+        414.625,
+        449.3125
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "title": "Vignette",
+      "properties": {
+        "proxyWidgets": [
+          [
+            "2",
+            "image"
+          ],
+          [
+            "23",
+            "value"
+          ],
+          [
+            "24",
+            "value"
+          ],
+          [
+            "26",
+            "value"
+          ],
+          [
+            "27",
+            "value"
+          ],
+          [
+            "25",
+            "value"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 14,
+      "type": "SaveImage",
+      "pos": [
+        2996.8566311438994,
+        2296.8873617551467
+      ],
+      "size": [
+        484.734375,
+        530.734375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 28,
+          "lastLinkId": 37,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Vignette",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            1706.844967821621,
+            2683.904730290708,
+            128,
+            48
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3597.3177843681256,
+            2678.288000026419,
+            128,
+            68
+          ]
+        },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "70003fca-0f35-46b5-a08b-fb28b3ddd14a",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              36
+            ],
+            "localized_name": "IMAGE0",
+            "pos": [
+              3621.3177843681256,
+              2702.288000026419
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 2,
+            "type": "LoadImage",
+            "pos": [
+              1894.844967821621,
+              2221.3889958893706
+            ],
+            "size": [
+              282.796875,
+              340
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  35
+                ]
+              },
+              {
+                "localized_name": "MASK",
+                "name": "MASK",
+                "type": "MASK",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "LoadImage"
+            },
+            "widgets_values": [
+              "ComfyUI_00527_.png",
+              "image"
+            ]
+          },
+          {
+            "id": 21,
+            "type": "GLSLShader",
+            "pos": [
+              2314.373134845081,
+              2223.1172537355956
+            ],
+            "size": [
+              867.75,
+              997.359375
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 35
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 30
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "label": "u_bool0",
+                "localized_name": "bools.u_bool0",
+                "name": "bools.u_bool0",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": 32
+              },
+              {
+                "label": "u_bool1",
+                "localized_name": "bools.u_bool1",
+                "name": "bools.u_bool1",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": null
+              },
+              {
+                "label": "u_curve0",
+                "localized_name": "curves.u_curve0",
+                "name": "curves.u_curve0",
+                "shape": 7,
+                "type": "CURVE",
+                "link": null
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 31
+              },
+              {
+                "label": "u_float2",
+                "localized_name": "floats.u_float2",
+                "name": "floats.u_float2",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 33
+              },
+              {
+                "label": "u_float3",
+                "localized_name": "floats.u_float3",
+                "name": "floats.u_float3",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 34
+              },
+              {
+                "label": "u_float4",
+                "localized_name": "floats.u_float4",
+                "name": "floats.u_float4",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int1",
+                "localized_name": "ints.u_int1",
+                "name": "ints.u_int1",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  36
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "/* Adapted from olive video editor project \nRebuilt for ComfyUI by axiomgraph */\n\n#version 300 es\n#define M_PI 3.1415926535897932384626433832795\nprecision highp float;\n\nlayout(location = 0) out vec4 fragColor;\n\nuniform sampler2D u_image0;\n\nin vec2 v_texCoord;\nuniform vec2 u_resolution;\n\nuniform float u_float0; // Radius (0-100+)\nuniform float u_float1; // Softness / Feather (0-100+)\nuniform float u_float2; // Origin X Offset (-50 to 50, 0 is center)\nuniform float u_float3; // Origin Y Offset (-50 to 50, 0 is center)\nuniform bool u_bool0;   // Aspect Ratio Correction\n\nuniform int invert;\n\nvoid main(void) {\n    vec2 radiusSoftness = vec2(u_float0, u_float1);\n    vec2 centerOffset = vec2(u_float2, u_float3);\n    \n    // Prevent zero-radius glitching\n    if (radiusSoftness.x <= 0.0) {\n        discard;\n    }\n    \n    vec4 c = texture(u_image0, v_texCoord);\n    vec2 vignetteCoord = v_texCoord;\n    \n    // Aspect ratio correction (keeps the vignette perfectly circular)\n    if (u_bool0) {\n        float ar = (u_resolution.x / u_resolution.y);\n        vignetteCoord.x *= ar;\n        vignetteCoord.x -= (1.0 - (1.0 / ar)) * 0.5; // Fixed centering for AR\n    }\n    \n    // Base distance from center\n    float dist = distance(vignetteCoord, vec2(0.5 + centerOffset.x * 0.01, 0.5 + centerOffset.y * 0.01));\n    \n    // Convert 0-100 inputs to 0.0-1.0 UV space\n    float radius = radiusSoftness.x * 0.01;\n    float softness = radiusSoftness.y * 0.01;\n    \n    // Calculate the smooth gradient\n    // Outer edge is 'radius', inner edge is 'radius - softness'\n    float vignetteMask = smoothstep(radius, radius - softness, dist);\n    \n    if (bool(invert)) {\n        c.rgb *= (1.0 - vignetteMask);\n    } else {\n        c.rgb *= vignetteMask;\n    }\n    \n    fragColor = c;\n}",
+              "from_input"
+            ]
+          },
+          {
+            "id": 23,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1903.9277729488704,
+              2620.9795998094614
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "radius",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  30
+                ]
+              }
+            ],
+            "title": "Radius",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              80
+            ]
+          },
+          {
+            "id": 24,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1908.3723119945957,
+              2759.0134502072506
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "softness",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  31
+                ]
+              }
+            ],
+            "title": "Softness",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              41
+            ]
+          },
+          {
+            "id": 25,
+            "type": "PrimitiveBoolean",
+            "pos": [
+              1910.244811286055,
+              2897.900775132728
+            ],
+            "size": [
+              270,
+              76
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "circular",
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveBoolean"
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 26,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1913.570785202941,
+              3023.464680189795
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "origin_x",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  33
+                ]
+              }
+            ],
+            "title": "Origin_X",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              0
+            ]
+          },
+          {
+            "id": 27,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1915.8525638920607,
+              3163.2405046961508
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "origin_y",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  34
+                ]
+              }
+            ],
+            "title": "Origin_Y",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              0
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 30,
+            "origin_id": 23,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 31,
+            "origin_id": 24,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 7,
+            "type": "FLOAT"
+          },
+          {
+            "id": 32,
+            "origin_id": 25,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 4,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 33,
+            "origin_id": 26,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 8,
+            "type": "FLOAT"
+          },
+          {
+            "id": 34,
+            "origin_id": 27,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 9,
+            "type": "FLOAT"
+          },
+          {
+            "id": 35,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 21,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 36,
+            "origin_id": 21,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0810017269359449,
+      "offset": [
+        -2253.638533927472,
+        -2058.2008126040637
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
