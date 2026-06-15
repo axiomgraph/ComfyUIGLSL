@@ -1,0 +1,544 @@
+{
+  "id": "2d9fa746-33d8-410d-96e2-074378a14f81",
+  "revision": 0,
+  "last_node_id": 29,
+  "last_link_id": 38,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+      "pos": [
+        2405.7901252464253,
+        2267.4752537031827
+      ],
+      "size": [
+        316.578125,
+        463.015625
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "title": "Halftone",
+      "properties": {
+        "proxyWidgets": [
+          [
+            "15",
+            "$$canvas-image-preview"
+          ],
+          [
+            "23",
+            "value"
+          ],
+          [
+            "25",
+            "value"
+          ],
+          [
+            "26",
+            "value"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 14,
+      "type": "SaveImage",
+      "pos": [
+        2849.123287134669,
+        2266.267614186546
+      ],
+      "size": [
+        475.5625,
+        467.640625
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "LoadImage",
+      "pos": [
+        2000.0367930151308,
+        2267.9229727267493
+      ],
+      "size": [
+        302.125,
+        457.015625
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00523_.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      21,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 29,
+          "lastLinkId": 38,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Halftone",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            1706.844967821621,
+            2683.904730290708,
+            128,
+            68
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3361.6911613033376,
+            2668.8087680640424,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "c09d0e50-2890-4532-ad30-2fd8b92ea550",
+            "name": "images.image0",
+            "type": "IMAGE",
+            "linkIds": [
+              37
+            ],
+            "label": "image",
+            "pos": [
+              1810.844967821621,
+              2707.904730290708
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "70003fca-0f35-46b5-a08b-fb28b3ddd14a",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              18
+            ],
+            "localized_name": "IMAGE0",
+            "pos": [
+              3385.6911613033376,
+              2692.8087680640424
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 15,
+            "type": "GLSLShader",
+            "pos": [
+              2285.360384060616,
+              2284.6751046911245
+            ],
+            "size": [
+              880.1875,
+              272
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 37
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 32
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 33
+              },
+              {
+                "label": "u_float2",
+                "localized_name": "floats.u_float2",
+                "name": "floats.u_float2",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 34
+              },
+              {
+                "label": "u_float3",
+                "localized_name": "floats.u_float3",
+                "name": "floats.u_float3",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "label": "u_bool0",
+                "localized_name": "bools.u_bool0",
+                "name": "bools.u_bool0",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": null
+              },
+              {
+                "label": "u_curve0",
+                "localized_name": "curves.u_curve0",
+                "name": "curves.u_curve0",
+                "shape": 7,
+                "type": "CURVE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  18
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "/* Classic Halftone Filter for ComfyUI by AxiomGraph */\n   \n#version 300 es\nprecision highp float;\n\nlayout(location = 0) out vec4 fragColor;\nuniform sampler2D u_image0;\nin vec2 v_texCoord;\n\n// Uniforms\nuniform float u_float0; // Dot Size (pixels, e.g., 5.0 to 30.0)\nuniform float u_float1; // Grid Angle (degrees, 45.0 is the print standard)\nuniform float u_float2; // Dot Sharpness/Feather (1.0 is sharp, 3.0 is soft)\n\nvoid main(void)\n{\n    vec2 res = vec2(textureSize(u_image0, 0));\n    vec2 uv = v_texCoord;\n\n    // 1. Setup rotation matrices\n    float angle = radians(u_float1);\n    float s = sin(angle);\n    float c = cos(angle);\n    mat2 rot = mat2(c, -s, s, c);\n    mat2 invRot = mat2(c, s, -s, c); // We need the inverse to sample the image later\n\n    // 2. Convert to pixel space and rotate the canvas\n    vec2 pixelPos = uv * res;\n    vec2 rotPos = rot * pixelPos;\n\n    // 3. Grid Snapping\n    float dotSize = max(u_float0, 2.0); // Safety limit\n    vec2 gridPos = mod(rotPos, dotSize);\n    vec2 cellCenter = rotPos - gridPos + vec2(dotSize * 0.5);\n\n    // 4. THE PRO TRICK: Inverse Sampling\n    // Because we rotated the grid, we have to un-rotate the center coordinate \n    // to find out what pixel to sample from the original flat image.\n    vec2 sampleUv = (invRot * cellCenter) / res;\n    vec3 centerColor = texture(u_image0, sampleUv).rgb;\n\n    // 5. Calculate true Luminance (Brightness)\n    float lum = dot(centerColor, vec3(0.299, 0.587, 0.114));\n\n    // 6. THE OTHER PRO TRICK: Area vs. Radius\n    // We use sqrt() so the physical AREA of the dot scales linearly with darkness.\n    // Multiplying by 0.707 (sqrt(2)/2) ensures the dots are allowed to grow large \n    // enough to touch corner-to-corner, creating pure black areas.\n    float maxRadius = dotSize * 0.707;\n    float radius = maxRadius * sqrt(1.0 - lum);\n\n    // 7. Draw the dot\n    float dist = distance(gridPos, vec2(dotSize * 0.5));\n    float sharpness = max(u_float2, 0.5); // Feathering for anti-aliasing\n    \n    // smoothstep creates the anti-aliased edge of the circle\n    float dotMask = smoothstep(radius, radius - sharpness, dist);\n\n    // Output pure black dots on a white background\n    fragColor = vec4(vec3(dotMask), 1.0);\n}",
+              "from_input"
+            ]
+          },
+          {
+            "id": 23,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1935.0352019375127,
+              2687.7883795834477
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "dot size",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "title": "Dot Size",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              10
+            ]
+          },
+          {
+            "id": 25,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1939.1261110284224,
+              2822.159454443654
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "grid angle",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  33
+                ]
+              }
+            ],
+            "title": "Grid Angle",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              0
+            ]
+          },
+          {
+            "id": 26,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1943.4971858886288,
+              2963.5916844084886
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "dot sharpness",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  34
+                ]
+              }
+            ],
+            "title": "Dot Sharpness",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              1
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 18,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 32,
+            "origin_id": 23,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 33,
+            "origin_id": 25,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": 34,
+            "origin_id": 26,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 4,
+            "type": "FLOAT"
+          },
+          {
+            "id": 37,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1891018996295406,
+      "offset": [
+        -1762.3246427596016,
+        -2084.5053697270414
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
