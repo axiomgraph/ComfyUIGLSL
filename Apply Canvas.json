@@ -1,0 +1,661 @@
+{
+  "id": "2d9fa746-33d8-410d-96e2-074378a14f81",
+  "revision": 0,
+  "last_node_id": 36,
+  "last_link_id": 45,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+      "pos": [
+        2397.1223604917145,
+        2267.985171289343
+      ],
+      "size": [
+        352.140625,
+        498.375
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 36
+        },
+        {
+          "label": "texture",
+          "name": "images.image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "15",
+            "$$canvas-image-preview"
+          ],
+          [
+            "23",
+            "value"
+          ],
+          [
+            "25",
+            "value"
+          ],
+          [
+            "35",
+            "choice"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 14,
+      "type": "SaveImage",
+      "pos": [
+        2816.6191693045043,
+        2272.801614186545
+      ],
+      "size": [
+        475.5625,
+        467.640625
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "LoadImage",
+      "pos": [
+        2000.0367930151308,
+        2267.9229727267493
+      ],
+      "size": [
+        302.125,
+        457.015625
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00523_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "LoadImage",
+      "pos": [
+        2017.1388013227975,
+        2786.7160047114307
+      ],
+      "size": [
+        282.796875,
+        340
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            43
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "struc.png",
+        "image"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "Note",
+      "pos": [
+        1668.324438646691,
+        2785.3633956515127
+      ],
+      "size": [
+        297.515625,
+        285.40625
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "texture",
+      "properties": {},
+      "widgets_values": [
+        "https://github.com/axiomgraph/ComfyUIGLSL/blob/main/textures/struc.png"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      12,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      21,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      43,
+      33,
+      0,
+      13,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "81bcdb16-8f3d-4430-af2c-effadbe0763c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 36,
+          "lastLinkId": 45,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Apply Canvas",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            1706.844967821621,
+            2683.904730290708,
+            128,
+            88
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            3361.6911613033376,
+            2668.8087680640424,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "c09d0e50-2890-4532-ad30-2fd8b92ea550",
+            "name": "images.image0",
+            "type": "IMAGE",
+            "linkIds": [
+              37
+            ],
+            "label": "image",
+            "pos": [
+              1810.844967821621,
+              2707.904730290708
+            ]
+          },
+          {
+            "id": "5a032178-3cc0-4715-b1da-58e128439876",
+            "name": "images.image1",
+            "type": "IMAGE",
+            "linkIds": [
+              42
+            ],
+            "label": "texture",
+            "pos": [
+              1810.844967821621,
+              2727.904730290708
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "70003fca-0f35-46b5-a08b-fb28b3ddd14a",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              18
+            ],
+            "localized_name": "IMAGE0",
+            "pos": [
+              3385.6911613033376,
+              2692.8087680640424
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 15,
+            "type": "GLSLShader",
+            "pos": [
+              2280.968084060616,
+              2571.8156046911245
+            ],
+            "size": [
+              878.6875,
+              292
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 37
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 42
+              },
+              {
+                "label": "image2",
+                "localized_name": "images.image2",
+                "name": "images.image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 32
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 33
+              },
+              {
+                "label": "u_float2",
+                "localized_name": "floats.u_float2",
+                "name": "floats.u_float2",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": 45
+              },
+              {
+                "label": "u_int1",
+                "localized_name": "ints.u_int1",
+                "name": "ints.u_int1",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "label": "u_bool0",
+                "localized_name": "bools.u_bool0",
+                "name": "bools.u_bool0",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "link": null
+              },
+              {
+                "label": "u_curve0",
+                "localized_name": "curves.u_curve0",
+                "name": "curves.u_curve0",
+                "shape": 7,
+                "type": "CURVE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  18
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "#version 300 es\n/* Apply Canvas from Gimp\n   Rebuilt for ComfyUI by AxiomGraph */\n\nprecision highp float;\n\nlayout(location = 0) out vec4 fragColor;\n\nuniform sampler2D u_image0; // Main Color Image\nuniform sampler2D u_image1; // Texture Map (Canvas Weave PNG)\n\nin vec2 v_texCoord;\n\n// Uniforms - Clean separation of types\nuniform float u_float0; // Texture Scale / Size (10.0 to 200.0)\nuniform float u_float1; // Relief Depth / Intensity (0.0 to 5.0)\nuniform int u_int0;     // Light Direction Index (0 to 3)\n\nfloat getHeight(vec2 uv) {\n    vec3 col = texture(u_image1, uv).rgb;\n    return dot(col, vec3(0.299, 0.587, 0.114));\n}\n\nvoid main() {\n    vec2 res0 = vec2(textureSize(u_image0, 0));\n    vec2 res1 = vec2(textureSize(u_image1, 0));\n    vec2 uv = v_texCoord;\n\n    // 1. Precise Aspect Ratio Tiling (With Inverse Scale Fix)\n    float aspect0 = res0.x / res0.y;\n    float aspect1 = res1.x / res1.y;\n    \n    float currentScale = max(u_float0, 1.0);\n    vec2 tileUV = uv * (100.0 / currentScale);\n    tileUV.x *= (aspect0 / aspect1); \n    tileUV = fract(tileUV);\n\n    // 2. High-Pass Emboss Math\n    vec2 texelSize = 1.0 / res1; \n    \n    float hC = getHeight(tileUV);\n    float hR = getHeight(fract(tileUV + vec2(texelSize.x, 0.0)));\n    float hU = getHeight(fract(tileUV + vec2(0.0, texelSize.y)));\n\n    \n    // 3. Discrete Corner Light Selection (Aligned with Custom Combo Index)\n    vec2 lightDir = vec2(1.0, 1.0);\n    \n    if (u_int0 == 0)      lightDir = normalize(vec2( 1.0, -1.0)); // 0: top-right\n    else if (u_int0 == 1) lightDir = normalize(vec2(-1.0, -1.0)); // 1: top-left\n    else if (u_int0 == 2) lightDir = normalize(vec2(-1.0,  1.0)); // 2: bottom-left\n    else if (u_int0 == 3) lightDir = normalize(vec2( 1.0,  1.0)); // 3: bottom-right\n    \n    // Calculate slope along the selected corner vector\n    float slope = (hR - hC) * lightDir.x + (hU - hC) * lightDir.y;\n    float bump = slope * u_float1 * 0.2;\n\n    // 4. Overlay Blend\n    vec3 baseColor = texture(u_image0, uv).rgb;\n    vec3 outputColor = baseColor + vec3(bump);\n\n    fragColor = vec4(clamp(outputColor, 0.0, 1.0), 1.0);\n}",
+              "from_input"
+            ]
+          },
+          {
+            "id": 23,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1935.0352019375127,
+              2687.7883795834477
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "texture_scale",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "title": "Texture Scale",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              10
+            ]
+          },
+          {
+            "id": 25,
+            "type": "PrimitiveFloat",
+            "pos": [
+              1939.1261110284224,
+              2822.159454443654
+            ],
+            "size": [
+              270,
+              80
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "intensity",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  33
+                ]
+              }
+            ],
+            "title": "Intensity",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              2
+            ]
+          },
+          {
+            "id": 35,
+            "type": "CustomCombo",
+            "pos": [
+              1933.4334173056684,
+              2962.1036314460753
+            ],
+            "size": [
+              270,
+              308
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "direction",
+                "localized_name": "choice",
+                "name": "choice",
+                "type": "COMBO",
+                "widget": {
+                  "name": "choice"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "INDEX",
+                "name": "INDEX",
+                "type": "INT",
+                "links": [
+                  45
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.24.0",
+              "Node name for S&R": "CustomCombo"
+            },
+            "widgets_values": [
+              "top-right",
+              0,
+              "top-right",
+              "top-left",
+              "bottom-left",
+              "bottom-right",
+              ""
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 18,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 32,
+            "origin_id": 23,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": 33,
+            "origin_id": 25,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 4,
+            "type": "FLOAT"
+          },
+          {
+            "id": 37,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 42,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 15,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 45,
+            "origin_id": 35,
+            "origin_slot": 1,
+            "target_id": 15,
+            "target_slot": 6,
+            "type": "INT"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1167815779424815,
+      "offset": [
+        -1664.899158699763,
+        -2180.797714130039
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
